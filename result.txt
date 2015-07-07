@@ -1,8 +1,8 @@
-Maximala flödet för grafen i rail.txt är 163
+The max flow in the graph rail.txt is 163.
+The following arcs are between A and B where c(A,B) is a min-cut.
+The format is n1 n2 c
+To be clear, the arc is between node n1 and node n2 with capacity c.
 
-Följande bågar går mellan A och B där c(A,B) är ett min-cut. 
-Formatet är n1 n2 c 
-Bågen går alltså mellan nod nummer n1 och nod nummer n2 och har kapaciteten c.
 
 28 30 19
 29 30 5
