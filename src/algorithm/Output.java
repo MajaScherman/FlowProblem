@@ -71,7 +71,7 @@ public class Output {
 				for (Arc arc : arcs) {
 					if (arc.containsNodes(n, nn) && (arc.getU() < arc.getV())) {
 						minCut.add(arc);
-						System.out.println(arc.toStringFlow());
+						System.out.println(arc.toString());
 					}
 				}
 			}
