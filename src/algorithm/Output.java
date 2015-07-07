@@ -8,22 +8,20 @@ import java.util.Stack;
 public class Output {
 	private ArrayList<Arc> resGraph;
 	private ArrayList<Arc> minCut;
-	private HashSet<Node> checked;
-	private HashSet<Arc> checkedArcs;
 	private ArrayList<Node> nodes;
 	private Stack<Node> nextLayer;
-	private Node s, t;
+	private Node s;
 	private HashSet<Node> a, b;
 
 	public Output(ArrayList<Arc> resGraph, ArrayList<Node> nodes) {
 		nextLayer = new Stack<Node>();
 		minCut = new ArrayList<Arc>();
-		checked = new HashSet<Node>();
-		checkedArcs = new HashSet<Arc>();
+		new HashSet<Node>();
+		new HashSet<Arc>();
 		this.resGraph = resGraph;
 		this.nodes = nodes;
 		s = nodes.get(0);
-		t = nodes.get(nodes.size() - 1);
+		nodes.get(nodes.size() - 1);
 		a = new HashSet<Node>();
 		b = new HashSet<Node>();
 	}
@@ -74,7 +72,6 @@ public class Output {
 					if (arc.containsNodes(n, nn) && (arc.getU() < arc.getV())) {
 						minCut.add(arc);
 						System.out.println(arc.toStringFlow());
-						// OUTPUTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 					}
 				}
 			}
@@ -91,6 +88,9 @@ public class Output {
 		return s;
 	}
 
+	/*
+	 * Change datastructure like everywhere to HashSet!!
+	 */
 	private Node nodesContains(int i) {
 		Iterator<Node> itr = nodes.iterator();
 		Node a;

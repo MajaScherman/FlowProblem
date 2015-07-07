@@ -21,9 +21,8 @@ public class Train {
 		try {
 			in = new Scanner(new File("rail.txt"));// (args[0]); or (System.in);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}// (System.in);
+		}
 
 		int nbrNodes;
 		nbrNodes = in.nextInt();
@@ -35,7 +34,7 @@ public class Train {
 			nodes.add(new Node(i));
 		}
 		int nbrArcs = in.nextInt();
-		String linebreak = in.nextLine();
+		in.nextLine();//throws away line break
 		ArrayList<Arc> resGraph = new ArrayList<Arc>();
 		int a, b, c;
 		for (int i = 0; i < nbrArcs; i++) {
@@ -63,15 +62,14 @@ public class Train {
 
 		boolean hasPath = true;
 		while (hasPath) {
-			// Do BFS in respect to flow from s-t
+			// Do DFS in respect to flow from s-t
 			Path path = new Path(nodes.get(0), nodes.get(nbrNodes - 1), nodes); // Path
 																				// (s,t)
-			hasPath = path.createSimplePath(resGraph); // P(G,f) men flow är en
-														// del i resGraph
+			hasPath = path.createSimplePath(resGraph);
 			ArrayList<Arc> simplePath = path.getPath();
-			for (Arc cs : simplePath) {
-				// System.out.println(cs.toStringExtra());
-			}
+			/*for (Arc cs : simplePath) {
+				System.out.println(cs.toStringExtra());
+			}*/
 			int bottleneck = path.bottleneck();
 			// System.out.println("bottleneck: " + bottleneck);
 
